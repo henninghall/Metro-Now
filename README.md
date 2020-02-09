@@ -1,16 +1,7 @@
-# mappy
+# Metro Now
 
-A new Flutter project.
+A flutter app using SL's API and the phone's compass to show the direction to the nearest metro station.
 
-## Getting Started
+<img src="https://i.postimg.cc/fLFX70Nf/Screenshot-2020-02-09-at-19-38-15.png" width="200" />
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
