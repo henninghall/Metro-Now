@@ -21,7 +21,10 @@ dependencies:
     sdk: flutter
   http:  ^0.12.0+4
   geolocator: ^5.2.1
+  flutter_bloc: ^3.2.0
   flutter_compass: '^0.3.4'
+  equatable: ^1.1.0
+
   
 
 

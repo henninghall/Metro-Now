@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class StationText extends StatelessWidget {
-  StationText({@required this.stationName});
-  final String stationName;
+  StationText({@required this.text});
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class StationText extends StatelessWidget {
         ),
         SizedBox(height: 20),
         Text(
-          stationName,
+          text,
           style: Theme.of(context)
               .textTheme
               .display2

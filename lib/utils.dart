@@ -19,7 +19,7 @@ double calculateBearing(double lat1, double lng1, double lat2, double lng2) {
 }
 
 String getApiUrl(Position position) {
-  var key = "58ed5879c9564e158f48540fe640d8a4";
+  var key = "dbae6533b7e34f25a12f4eb5b3f1353d";
   var latitude = position.latitude;
   var longitude = position.longitude;
   var maxDist = 2000; // 2000 is the maximum allowed value in the api

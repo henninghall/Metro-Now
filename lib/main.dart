@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'bloc/app_bloc.dart';
 import 'home_screen/home.dart';
 
 void main() => runApp(App());
@@ -18,7 +20,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Metro Now',
       theme: theme,
-      home: Home(),
+      home: BlocProvider<AppBloc>(
+        create: (context) => AppBloc(),
+        child: Home(),
+      ),
     );
   }
 }

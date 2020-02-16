@@ -20,6 +20,7 @@ Future<Station> _fetchClosestStation(position) async {
 Stream<Station> _createClosestStationStream() {
   var controller = StreamController<Station>();
   Position position;
+  Position lastPosition;
   Station station;
 
   getPositionStream().listen((currentPosition) {
@@ -28,9 +29,11 @@ Stream<Station> _createClosestStationStream() {
 
   Timer.periodic(new Duration(seconds: 10), (timer) async {
     if (position == null) return;
+    if (position == lastPosition) return;
     try {
       station = await _fetchClosestStation(position);
       controller.add(station);
+      lastPosition = position;
     } catch (e) {
       controller.addError(e);
     }
