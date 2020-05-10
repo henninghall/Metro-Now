@@ -9,8 +9,6 @@ import 'package:metro_now/models/Station.dart';
 import 'package:metro_now/streams/closes_station_stream.dart';
 import 'package:metro_now/streams/position_stream.dart';
 
-import '../utils.dart';
-
 enum Events { Update }
 
 class AppBloc extends Bloc<Events, AppState> {
@@ -36,7 +34,7 @@ class AppBloc extends Bloc<Events, AppState> {
     if (_station == null || _position == null || _northDirection == null)
       return;
     yield AppState(
-        distance: getDistance(),
+        distance: _station.distance,
         stationName: _station.name,
         angle: await getAngle());
   }
@@ -54,12 +52,6 @@ class AppBloc extends Bloc<Events, AppState> {
   void onCompassChange(double direction) {
     _northDirection = direction;
     add(Events.Update);
-  }
-
-  int getDistance() {
-    return calculateDistance(_station.latitude, _station.longitude,
-            _position.latitude, _position.longitude)
-        .round();
   }
 
   Future<double> getBearing() async {

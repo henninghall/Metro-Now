@@ -35,7 +35,7 @@ class _PageState extends State<Content> {
                   child: arrowImage,
                 ),
               ),
-              DistanceText(distance: state.distance),
+              DistanceText(distance: state.distance.round()),
             ]);
       },
     );

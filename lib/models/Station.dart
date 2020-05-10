@@ -1,21 +1,17 @@
-class Station {
-  final String id;
-  final int dist;
-  final double latitude;
-  final double longitude;
-  final String name;
+import 'StationWithoutDistance.dart';
 
-  Station({this.id, this.dist, this.name, this.latitude, this.longitude});
+class Station extends StationWithoutDistance {
+  double distance;
 
-  factory Station.fromJson(Map<String, dynamic> json) {
-    final Map<String, dynamic> data =
-        json["stopLocationOrCoordLocation"][0]["StopLocation"];
+  Station({name, latitude, longitude, this.distance})
+      : super(name: name, latitude: latitude, longitude: longitude);
+
+  factory Station.fromStationWithoutDistance(
+      StationWithoutDistance station, double distance) {
     return Station(
-      id: data['id'],
-      dist: data['dist'],
-      name: data['name'],
-      latitude: data['lat'],
-      longitude: data['lon'],
-    );
+        longitude: station.longitude,
+        latitude: station.latitude,
+        name: station.name,
+        distance: distance);
   }
 }

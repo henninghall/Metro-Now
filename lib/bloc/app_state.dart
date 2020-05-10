@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 class AppState extends Equatable {
   final String stationName;
   final double angle;
-  final int distance;
+  final double distance;
 
   AppState({this.stationName, this.angle, this.distance});
 

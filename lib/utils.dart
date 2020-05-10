@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'package:geolocator/geolocator.dart';
 
 double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
   var p = 0.017453292519943295;
@@ -16,12 +15,4 @@ double calculateBearing(double lat1, double lng1, double lat2, double lng2) {
   var x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dLon);
   var brng = atan2(y, x) * 180 / pi;
   return 360 - ((brng + 360) % 360);
-}
-
-String getApiUrl(Position position) {
-  var key = "dbae6533b7e34f25a12f4eb5b3f1353d";
-  var latitude = position.latitude;
-  var longitude = position.longitude;
-  var maxDist = 2000; // 2000 is the maximum allowed value in the api
-  return "http://api.sl.se/api2/nearbystopsv2.json?key=$key&originCoordLat=$latitude&originCoordLong=$longitude&maxNo=5&r=$maxDist&products=2";
 }

@@ -1,21 +1,11 @@
 import 'dart:async';
 
 import 'package:geolocator/geolocator.dart';
+import 'package:metro_now/models/LatLng.dart';
 import 'package:metro_now/models/Station.dart';
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
 import 'package:metro_now/streams/position_stream.dart';
-import 'package:metro_now/utils.dart';
 
-Future<Station> _fetchClosestStation(position) async {
-  final response = await http.get(getApiUrl(position));
-  if (response.statusCode == 200) {
-    return Station.fromJson(json.decode(response.body));
-  } else {
-    throw Exception('Failed to load station');
-  }
-}
+import '../get_closest_station.dart';
 
 Stream<Station> _createClosestStationStream() {
   var controller = StreamController<Station>();
@@ -31,7 +21,8 @@ Stream<Station> _createClosestStationStream() {
     if (position == null) return;
     if (position == lastPosition) return;
     try {
-      station = await _fetchClosestStation(position);
+      station = getClosestStation(
+          LatLng(latitude: position.latitude, longitude: position.longitude));
       controller.add(station);
       lastPosition = position;
     } catch (e) {
