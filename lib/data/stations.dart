@@ -1,4 +1,4 @@
-import 'package:metro_now/data/rawStationData.dart';
+import 'package:metro_now/data/stationData.dart';
 import 'package:metro_now/models/StationWithoutDistance.dart';
 
 List<StationWithoutDistance> stations = rawStationData

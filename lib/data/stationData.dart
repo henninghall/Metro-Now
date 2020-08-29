@@ -56,7 +56,7 @@ List rawStationData = [
     [59.338388, 17.939260]
   ],
   [
-    'Danderydssjukhus',
+    'Danderyds sjukhus',
     [59.391901, 18.041368]
   ],
   [
@@ -64,7 +64,7 @@ List rawStationData = [
     [59.367891, 17.964618]
   ],
   [
-    'Enskedegård',
+    'Enskede gård',
     [59.289397, 18.070296]
   ],
   [
@@ -72,7 +72,7 @@ List rawStationData = [
     [59.243552, 18.093281]
   ],
   [
-    'Farstastrand',
+    'Farsta strand',
     [59.235012, 18.101740]
   ],
   [
@@ -88,7 +88,7 @@ List rawStationData = [
     [59.285927, 17.965005]
   ],
   [
-    'Gamlastan',
+    'Gamla stan',
     [59.323160, 18.067617]
   ],
   [
@@ -148,7 +148,7 @@ List rawStationData = [
     [59.366902, 17.843767]
   ],
   [
-    'Hässelbystrand',
+    'Hässelby strand',
     [59.361283, 17.832351]
   ],
   [
@@ -268,7 +268,7 @@ List rawStationData = [
     [59.284785, 18.092382]
   ],
   [
-    'SanktEriksplan',
+    'S:t Eriksplan',
     [59.339655, 18.036991]
   ],
   [
@@ -304,11 +304,11 @@ List rawStationData = [
     [59.283302, 18.070592]
   ],
   [
-    'Solnacentrum',
+    'Solna centrum',
     [59.358856, 17.998975]
   ],
   [
-    'Solnastrand',
+    'Solna strand',
     [59.354191, 17.973985]
   ],
   [
@@ -320,7 +320,7 @@ List rawStationData = [
     [59.336959, 18.017322]
   ],
   [
-    'Storamossen',
+    'Stora mossen',
     [59.334532, 17.966192]
   ],
   [
@@ -328,7 +328,7 @@ List rawStationData = [
     [59.274600, 18.055625]
   ],
   [
-    'Sundbybergscentrum',
+    'Sundbybergs centrum',
     [59.360897, 17.972214]
   ],
   [
@@ -344,19 +344,11 @@ List rawStationData = [
     [59.271140, 18.085326]
   ],
   [
-    'TCentralen',
-    [59.330945, 18.059266]
+    'T-Centralen',
+    [59.3308, 18.0591]
   ],
   [
-    'TCentralen',
-    [59.330945, 18.059266]
-  ],
-  [
-    'TCentralen',
-    [59.330945, 18.059266]
-  ],
-  [
-    'Tekniskahögskolan',
+    'Tekniska högskolan',
     [59.345822, 18.071716]
   ],
   [
@@ -392,7 +384,7 @@ List rawStationData = [
     [59.291383, 17.966668]
   ],
   [
-    'Västraskogen',
+    'Västra skogen',
     [59.347476, 18.003991]
   ],
   [
