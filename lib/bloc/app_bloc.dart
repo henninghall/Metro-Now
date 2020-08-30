@@ -21,7 +21,8 @@ class AppBloc extends Bloc<Events, AppState> {
   StreamSubscription<Station> _stationSubscription;
 
   @override
-  AppState get initialState => AppState(stationName: "", angle: 0, distance: 0);
+  AppState get initialState =>
+      AppState(stationName: "", angle: 0, distance: 0, loading: true);
 
   AppBloc() {
     _stationSubscription = closestStationStream.listen(onData);
@@ -34,9 +35,11 @@ class AppBloc extends Bloc<Events, AppState> {
     if (_station == null || _position == null || _northDirection == null)
       return;
     yield AppState(
-        distance: _station.distance,
-        stationName: _station.name,
-        angle: await getAngle());
+      distance: _station.distance,
+      stationName: _station.name,
+      angle: await getAngle(),
+      loading: false,
+    );
   }
 
   void onData(Station station) {
@@ -61,7 +64,7 @@ class AppBloc extends Bloc<Events, AppState> {
 
   Future<double> getAngle() async {
     double bearingToStation = await getBearing();
-    return (-_northDirection + bearingToStation) * pi/180;
+    return (-_northDirection + bearingToStation) * pi / 180;
   }
 
   @override
