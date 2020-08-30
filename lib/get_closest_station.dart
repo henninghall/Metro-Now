@@ -6,7 +6,7 @@ import 'models/LatLng.dart';
 
 Station getClosestStation(LatLng coordinate) {
   Station closestStation;
-  stations.forEach((station) {
+  allEntrances.forEach((station) {
     var distance = calculateDistance(coordinate.latitude, coordinate.longitude,
         station.latitude, station.longitude);
     var isFirstStation = closestStation == null;

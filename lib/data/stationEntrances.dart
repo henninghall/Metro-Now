@@ -1,4 +1,4 @@
-Map stationEntrances = {
+Map<String, List<List<double>>> stationEntrances = {
   "Abrahamsberg": [
     [59.336516, 17.9521016]
   ],
