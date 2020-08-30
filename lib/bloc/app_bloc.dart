@@ -61,7 +61,7 @@ class AppBloc extends Bloc<Events, AppState> {
 
   Future<double> getAngle() async {
     double bearingToStation = await getBearing();
-    return (_northDirection + bearingToStation) * pi/180 * -1;
+    return (-_northDirection + bearingToStation) * pi/180;
   }
 
   @override
