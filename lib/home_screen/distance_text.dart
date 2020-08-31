@@ -9,7 +9,7 @@ class DistanceText extends StatelessWidget {
     return Padding(
       child: Text(
         "$distance m",
-        style: Theme.of(context).textTheme.display3.apply(fontWeightDelta: 3),
+        style: Theme.of(context).textTheme.headline3.apply(fontWeightDelta: 3),
       ),
       padding: EdgeInsets.all(8.0),
     );

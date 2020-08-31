@@ -24,8 +24,16 @@ class _PageState extends State<Content> {
   Widget build(BuildContext context) {
     return BlocBuilder<AppBloc, AppState>(
       builder: (BuildContext context, state) {
-        if(state.loading) {
-          return Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <Widget>[Text("Loading...")]);
+        if (state.loading) {
+          return Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Container(
+                  alignment: Alignment.center,
+                  child: Text("Loading...", style: Theme.of(context).textTheme.headline4.apply(fontWeightDelta: 3)),
+                ),
+              ]);
         }
         return Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

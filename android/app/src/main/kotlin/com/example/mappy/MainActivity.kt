@@ -1,4 +1,4 @@
-package com.example.mappy
+package se.digtek.metro
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

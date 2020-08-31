@@ -20,7 +20,7 @@ class StationText extends StatelessWidget {
           text,
           style: Theme.of(context)
               .textTheme
-              .display2
+              .headline3
               .apply(fontWeightDelta: 1, fontSizeFactor: 0.8),
         ),
       ],

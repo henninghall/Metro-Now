@@ -18,7 +18,7 @@ class App extends StatelessWidget {
     var theme = ThemeData(primarySwatch: Colors.blue, textTheme: newTextTheme);
 
     return MaterialApp(
-      title: 'Metro Now',
+      title: 'Finding Metro',
       theme: theme,
       home: BlocProvider<AppBloc>(
         create: (context) => AppBloc(),
