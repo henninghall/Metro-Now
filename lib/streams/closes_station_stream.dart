@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:geolocator/geolocator.dart';
 import 'package:metro_now/models/LatLng.dart';
 import 'package:metro_now/models/Station.dart';
-import 'package:metro_now/streams/position_stream.dart';
 
 import '../get_closest_station.dart';
 

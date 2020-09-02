@@ -7,7 +7,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:metro_now/bloc/app_state.dart';
 import 'package:metro_now/models/Station.dart';
 import 'package:metro_now/streams/closes_station_stream.dart';
-import 'package:metro_now/streams/position_stream.dart';
 
 enum Events { Update }
 
@@ -32,12 +31,22 @@ class AppBloc extends Bloc<Events, AppState> {
 
   @override
   Stream<AppState> mapEventToState(Events event) async* {
-    if (_station == null || _position == null || _northDirection == null)
+    if (_station == null || _position == null) {
+      yield AppState(
+        loading: true,
+      );
       return;
+    }
+
+    if (_northDirection == null) {
+      yield AppState(loading: false, error: Error.noCompass);
+      return;
+    }
+
     yield AppState(
       distance: _station.distance,
       stationName: _station.name,
-      angle: await getAngle(),
+      angle: getAngle(),
       loading: false,
     );
   }
@@ -57,14 +66,18 @@ class AppBloc extends Bloc<Events, AppState> {
     add(Events.Update);
   }
 
-  Future<double> getBearing() async {
-    return await Geolocator().bearingBetween(_position.latitude,
+  double getBearing() {
+    return GeolocatorPlatform.bearingBetween(_position.latitude,
         _position.longitude, _station.latitude, _station.longitude);
   }
 
-  Future<double> getAngle() async {
-    double bearingToStation = await getBearing();
-    return (-_northDirection + bearingToStation) * pi / 180;
+  double getAngle() {
+    double bearingToStation = getBearing();
+    return toRad(bearingToStation - _northDirection);
+  }
+
+  double toRad(double degrees) {
+    return degrees * pi / 180;
   }
 
   @override
